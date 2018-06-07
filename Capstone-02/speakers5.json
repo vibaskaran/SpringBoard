@@ -1,0 +1,41 @@
+{"main_speaker": "TedTalk", "speaker_occupation": "A trendy talk", "url": "https://www.ted.com/","image_url": "https://cdn0.iconfinder.com/data/icons/circle-icons/512/ted.png",
+"children": [
+{"main_speaker": "Technology","speaker_occupation": "Technology Speakers","url": "https://www.ted.com/topics/technology",
+"children": [{"main_speaker": "James Veitch", "speaker_occupation": "Comedian and writer", "url": "https://www.ted.com/talks/james_veitch_this_is_what_happens_when_you_reply_to_spam_email", "image_url": "https://pe.tedcdn.com/images/ted/912867c2167fea99c033d6a21e0b2615e0d23844_254x191.jpg"}, {"main_speaker": "Pranav Mistry", "speaker_occupation": "Director of research, Samsung Research America", "url": "https://www.ted.com/talks/pranav_mistry_the_thrilling_potential_of_sixthsense_technology", "image_url": "https://pe.tedcdn.com/images/ted/76651_254x191.jpg"}, {"main_speaker": "David Gallo", "speaker_occupation": "Oceanographer", "url": "https://www.ted.com/talks/david_gallo_shows_underwater_astonishments", "image_url": "https://pe.tedcdn.com/images/ted/f512e69097ce96e9cc5555df5879d09c8d4c5c82_254x191.jpg"}, {"main_speaker": "Monica Lewinsky", "speaker_occupation": "Social activist", "url": "https://www.ted.com/talks/monica_lewinsky_the_price_of_shame", "image_url": "https://pe.tedcdn.com/images/ted/68ca90ffa79c89982a7bccbb5418ea877514c7d8_254x191.jpg"}, {"main_speaker": "Raffaello D'Andrea", "speaker_occupation": "Autonomous systems pioneer", "url": "https://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters", "image_url": "https://pe.tedcdn.com/images/ted/0480fa8b47103fef80ece400887f7a95c94f6c49_254x191.jpg"}]},
+{"main_speaker": "Science","speaker_occupation": "Science Speakers","url": "https://www.ted.com/topics/science",
+"children": [
+    {
+        "main_speaker": "Mary Roach",
+        "speaker_occupation": "Writer",
+        "url": "https://www.ted.com/talks/mary_roach_10_things_you_didn_t_know_about_orgasm",
+        "image_url": "https://pe.tedcdn.com/images/ted/90620_254x191.jpg"
+    },
+    {
+        "main_speaker": "Jill Bolte Taylor",
+        "speaker_occupation": "Neuroanatomist",
+        "url": "https://www.ted.com/talks/jill_bolte_taylor_s_powerful_stroke_of_insight",
+        "image_url": "https://pe.tedcdn.com/images/ted/33831_254x191.jpg"
+    },
+    {
+        "main_speaker": "Dan Pink",
+        "speaker_occupation": "Career analyst",
+        "url": "https://www.ted.com/talks/dan_pink_on_motivation",
+        "image_url": "https://pe.tedcdn.com/images/ted/110885_254x191.jpg"
+    },
+    {
+        "main_speaker": "Pamela Meyer",
+        "speaker_occupation": "Lie detector",
+        "url": "https://www.ted.com/talks/pamela_meyer_how_to_spot_a_liar",
+        "image_url": "https://pe.tedcdn.com/images/ted/af5e4e6b698d1585fae318a5f2d0793dd024a37d_254x191.jpg"
+    },
+    {
+        "main_speaker": "Shawn Achor",
+        "speaker_occupation": "Psychologist",
+        "url": "https://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work",
+        "image_url": "https://pe.tedcdn.com/images/ted/5e1981945f0ab69a7ab7d4054dbba05332576f71_254x191.jpg"
+    }
+]},
+{"main_speaker": "Global Issues","speaker_occupation": "Global Issues Speakers","url": "https://www.ted.com/topics/global+issues",
+"children": [{"main_speaker": "Jill Bolte Taylor", "speaker_occupation": "Neuroanatomist", "url": "https://www.ted.com/talks/jill_bolte_taylor_s_powerful_stroke_of_insight", "image_url": "https://pe.tedcdn.com/images/ted/33831_254x191.jpg"}, {"main_speaker": "Hans Rosling", "speaker_occupation": "Global health expert; data visionary", "url": "https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen", "image_url": "https://pe.tedcdn.com/images/ted/2bd4d0cfff0c3a3306650768c2f988e154db7042_254x191.jpg"}, {"main_speaker": "Hyeonseo Lee", "speaker_occupation": "Activist", "url": "https://www.ted.com/talks/hyeonseo_lee_my_escape_from_north_korea", "image_url": "https://pe.tedcdn.com/images/ted/ad18a8bf6421542e4a8d9b78eb976facecb7c539_254x191.jpg"}, {"main_speaker": "Jamie Oliver", "speaker_occupation": "Chef, activist", "url": "https://www.ted.com/talks/jamie_oliver", "image_url": "https://pe.tedcdn.com/images/ted/a346874066113e5c7470f8f22c0987b1d277ed0b_254x191.jpg"}, {"main_speaker": "Matthieu Ricard", "speaker_occupation": "Monk, author, photographer", "url": "https://www.ted.com/talks/matthieu_ricard_on_the_habits_of_happiness", "image_url": "https://pe.tedcdn.com/images/ted/18857_254x191.jpg"}]},
+{"main_speaker": "Culture","speaker_occupation": "Culture Speakers","url": "https://www.ted.com/topics/culture",
+"children": [{"main_speaker": "Ken Robinson", "speaker_occupation": "Author/educator", "url": "https://www.ted.com/talks/ken_robinson_says_schools_kill_creativity", "image_url": "https://pe.tedcdn.com/images/ted/1465_254x191.jpg"}, {"main_speaker": "Bren\u00cc\u00a9 Brown", "speaker_occupation": "Vulnerability researcher", "url": "https://www.ted.com/talks/brene_brown_on_vulnerability", "image_url": "https://pe.tedcdn.com/images/ted/c69b7d14d776425c73414cc7cc4ad52d8ddddf48_254x191.jpg"}, {"main_speaker": "Mary Roach", "speaker_occupation": "Writer", "url": "https://www.ted.com/talks/mary_roach_10_things_you_didn_t_know_about_orgasm", "image_url": "https://pe.tedcdn.com/images/ted/90620_254x191.jpg"}, {"main_speaker": "Julian Treasure", "speaker_occupation": "Sound consultant", "url": "https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen", "image_url": "https://pe.tedcdn.com/images/ted/3dea828a824d4f67ba2258123b07d4d3d49a8318_254x191.jpg"}, {"main_speaker": "Tony Robbins", "speaker_occupation": "Life coach; expert in leadership psychology", "url": "https://www.ted.com/talks/tony_robbins_asks_why_we_do_what_we_do", "image_url": "https://pe.tedcdn.com/images/ted/d49ff1134376281d41da6846c495eb3c139f8ccd_254x191.jpg"}]}]}

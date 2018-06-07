@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ted Talk Speakers</title>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+        body {
+            font-family: "Source Code Pro", Consolas, monaco, monospace;
+            line-height: 160%;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        path.link {
+            fill: none;
+            stroke-width: 2px;
+        }
+        
+        .node:not(:hover) .nodetext {
+            display: none;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        
+        h2,
+        h3 {
+            font-size: 18px;
+            margin: 5px 0;
+            font-weight: normal;
+        }
+        
+        header {
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        a:link {
+            color: #EE3124;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: #EE3124;
+        }
+        
+        a:hover {
+            color: #EE3124;
+            text-decoration: underline;
+        }
+        
+        a:active {
+            color: #EE3124;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Navigation Bar Container-->
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-default" style="background-color: #343a40">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="background-color:red; margin-left:4cm; " href="https://cdn0.iconfinder.com/data/icons/circle-icons/512/ted.png" ;></i>TED</i>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Navigation Bar with glyphicons -->
+
+                    <li>
+                        <a href="top_speakers.html"></i> Top Speakers</a>
+                    </li>
+                    <li>
+                        <a href="https://tedtalk-api.herokuapp.com/"></i> API</a>
+                    </li>
+                    <li>
+                        <a href="rating_Categories.html"></i> Rating Categories</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ted.com/"></i> Ted Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </li>
+    </div>
+
+    <!-- Second Container -->
+    <div class="container">
+        <header>
+
+            <div style="background-color: gray; margin-top:35px; margin-left:2.25cm">
+                <!-- information -->
+                <div style="padding:0cm;
+                margin-top:1.5cm;margin-bottom:0cm; margin-left:0cm; background-color:gray">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">TedTalk Speakers</h3>
+                        </div>
+                        <!-- Panel Contents -->
+                        <div class="panel-body">
+                            <h5>Speaker's Ted Talk URL</h5>
+                            <!--   <hr> -->
+                            <div style="background-color: white; margin-top:28px; margin-left:0.1cm">
+                                <select id="myDropdown" onchange="numofspeakers()"> 
+                          <option value="">Top Speakers</option>
+                          <option value="5">TOP 5</option>
+                          <option value="10">TOP10</option>
+                          <option value="20">TOP20</option>
+                          <option value="30">TOP30</option>                          
+                        </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- container for force layout visualisation  -->
+        <div style="background-color: gray">
+            <!-- information -->
+            <div style="padding:1cm; margin-left:0cm;margin-right:0cm;
+                margin-top:0cm;margin-bottom:0cm; background-color:gray">
+                <section id="vis"></section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function numofspeakers() {
+            // var speakerfile="speakers.json"
+
+            function getData() {
+                var dropdown = document.getElementById("myDropdown"); //select the dropdown
+                var strUser = dropdown.options[dropdown.selectedIndex].value; //get the selected value
+                return speakerfile = "speakers" + strUser + ".json";
+
+            }
+            getData()
+                // alert(speakerfile)
+
+
+            // var vis;
+            d3.json(speakerfile, function(json) {
+                root = json;
+                root.fixed = true;
+                root.y = h / 4;
+
+
+                // Build the path
+                var defs = vis.insert("svg:defs")
+                    .data(["begin"]);
+
+
+                defs.enter().append("svg:path")
+                    .attr("d", "M0,-5L10,0L0,5");
+
+                update();
+            });
+
+
+        }
+
+        // some colour variables
+
+        // rest of vars
+        var w = 1100,
+            h = 1000,
+            maxNodeSize = 50,
+            x_browser = 20,
+            y_browser = 25,
+            root;
+
+        var vis;
+        var force = d3.layout.force();
+
+        vis = d3.select("#vis").append("svg").attr("width", w).attr("height", h);
+
+
+        d3.json("speakers.json", function(json) {
+            root = json;
+            root.fixed = true;
+            root.y = h / 4;
+
+
+            // Build the path
+            var defs = vis.insert("svg:defs")
+                .data(["begin"]);
+
+
+            defs.enter().append("svg:path")
+                .attr("d", "M0,-5L10,0L0,5");
+
+            update();
+        });
+
+
+        /**
+         *   
+         */
+        function update() {
+            var nodes = flatten(root),
+                links = d3.layout.tree().links(nodes);
+
+            // Restart the force layout.
+            force.nodes(nodes)
+                .links(links)
+                .gravity(0.05)
+                .charge(-1200)
+                .linkDistance(100)
+                .friction(0.5)
+                .linkStrength(function(l, i) {
+                    return 1;
+                })
+                .size([w, h])
+                .on("tick", tick)
+                .start();
+
+            var path = vis.selectAll("path.link")
+                .data(links, function(d) {
+                    return d.target.id;
+                });
+
+            path.enter().insert("svg:path")
+                .attr("class", "link")
+                // .attr("marker-end", "url(#end)")
+                .style("stroke", "#eee");
+
+
+            // Exit any old paths.
+            path.exit().remove();
+
+
+
+            // Update the nodes…
+            var node = vis.selectAll("g.node")
+                .data(nodes, function(d) {
+                    return d.id;
+                });
+
+
+            // Enter any new nodes.
+            var nodeEnter = node.enter().append("svg:g")
+                .attr("class", "node")
+                .attr("transform", function(d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                })
+                .on("click", click)
+                .call(force.drag);
+
+            // Append a circle
+            nodeEnter.append("svg:circle")
+                .attr("r", function(d) {
+                    return Math.sqrt(d.size) / 10 || 4.5;
+                })
+                .style("fill", "#eee");
+
+
+            // Append images
+            var images = nodeEnter.append("svg:image")
+                .attr("xlink:href", function(d) {
+                    return d.image_url;
+                })
+                .attr("x", function(d) {
+                    return -25;
+                })
+                .attr("y", function(d) {
+                    return -25;
+                })
+                .attr("height", 50)
+                .attr("width", 50);
+
+            // make the image grow a little on mouse over and add the text details on click
+            var setEvents = images
+                // Append speaker text
+                .on('click', function(d) {
+                    d3.select("h3").html((d.main_speaker) + " (" + d.speaker_occupation + ")");
+                    d3.select("h5").html("The website: " + "<a href='" + d.url + "' target=\"_blank\">" + d.url + "</a>");
+                })
+
+            .on('mouseenter', function() {
+                    // select element in current context
+                    d3.select(this)
+                        .transition()
+                        .attr("x", function(d) {
+                            return -60;
+                        })
+                        .attr("y", function(d) {
+                            return -60;
+                        })
+                        .attr("height", 160)
+                        .attr("width", 160);
+                })
+                // set back
+                .on('mouseleave', function() {
+                    d3.select(this)
+                        .transition()
+                        .attr("x", function(d) {
+                            return -25;
+                        })
+                        .attr("y", function(d) {
+                            return -25;
+                        })
+                        .attr("height", 50)
+                        .attr("width", 50);
+                });
+
+            // Append speaker's name on roll over next to the node as well
+            nodeEnter.append("text")
+                .attr("class", "nodetext")
+                .attr("x", x_browser)
+                .attr("y", y_browser + 15)
+                .attr("fill", "white")
+                .text(function(d) {
+                    return d.main_speaker;
+                });
+
+
+            // Exit any old nodes.
+            node.exit().remove();
+
+
+            // Re-select for update.
+            path = vis.selectAll("path.link");
+            node = vis.selectAll("g.node");
+
+            function tick() {
+
+
+                path.attr("d", function(d) {
+
+                    var dx = d.target.x - d.source.x,
+                        dy = d.target.y - d.source.y,
+                        dr = Math.sqrt(dx * dx + dy * dy);
+                    return "M" + d.source.x + "," +
+                        d.source.y +
+                        "A" + dr + "," +
+                        dr + " 0 0,1 " +
+                        d.target.x + "," +
+                        d.target.y;
+                });
+                node.attr("transform", nodeTransform);
+            }
+        }
+
+
+        /**
+         * Gives the coordinates of the border for keeping the nodes inside a frame
+         * http://bl.ocks.org/mbostock/1129492
+         */
+        function nodeTransform(d) {
+            d.x = Math.max(maxNodeSize, Math.min(w - (d.imgwidth / 2 || 16), d.x));
+            d.y = Math.max(maxNodeSize, Math.min(h - (d.imgheight / 2 || 16), d.y));
+            return "translate(" + d.x + "," + d.y + ")";
+        }
+
+        /**
+         * Toggle children on click.
+         */
+        function click(d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+
+            update();
+        }
+
+
+        /**
+         * Returns a list of all nodes under the root.
+         */
+        function flatten(root) {
+            var nodes = [];
+            var i = 0;
+
+            function recurse(node) {
+                if (node.children)
+                    node.children.forEach(recurse);
+                if (!node.id)
+                    node.id = ++i;
+                nodes.push(node);
+            }
+
+            recurse(root);
+            return nodes;
+        }
+    </script>
+
+</body>
+
+</html>
