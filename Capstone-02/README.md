@@ -7,3 +7,6 @@
  * csv_to_json.ipynb - Reading from MongoDB to fix some data type isses then uploaded back to Mongodb
  * Flask_tedTalks.py - Creating API Facilties 
   
+To view the application Click the following Link
+
+https://tedtalks-visualization.herokuapp.com/ 
